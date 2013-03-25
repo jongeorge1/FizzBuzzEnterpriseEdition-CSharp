@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B447AAE3-4FD0-4A7B-B82F-ED51A5E58E41}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeriousCompany.Business.CSharp.FizzBuzz.Impl</RootNamespace>
+    <AssemblyName>SeriousCompany.Business.CSharp.FizzBuzz.Impl</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Factories\BuzzStrategyFactory.cs" />
+    <Compile Include="Factories\BuzzStringPrinterFactory.cs" />
+    <Compile Include="Factories\BuzzStringReturnerFactory.cs" />
+    <Compile Include="Factories\FizzStrategyFactory.cs" />
+    <Compile Include="Factories\FizzStringPrinterFactory.cs" />
+    <Compile Include="Factories\FizzStringReturnerFactory.cs" />
+    <Compile Include="Factories\IntegerIntegerStringReturnerFactory.cs" />
+    <Compile Include="Factories\IntIntegerPrinterFactory.cs" />
+    <Compile Include="Factories\LoopComponentFactory.cs" />
+    <Compile Include="Factories\NewLineStringPrinterFactory.cs" />
+    <Compile Include="Factories\NewLineStringReturnerFactory.cs" />
+    <Compile Include="Factories\NoFizzNoBuzzStrategyFactory.cs" />
+    <Compile Include="Loop\LoopCondition.cs" />
+    <Compile Include="Loop\LoopInitializer.cs" />
+    <Compile Include="Loop\LoopStep.cs" />
+    <Compile Include="Printers\BuzzPrinter.cs" />
+    <Compile Include="Printers\BuzzStringPrinter.cs" />
+    <Compile Include="Printers\FizzPrinter.cs" />
+    <Compile Include="Printers\FizzStringPrinter.cs" />
+    <Compile Include="Printers\IntegerIntegerPrinter .cs" />
+    <Compile Include="Printers\IntPrinter.cs" />
+    <Compile Include="Printers\NewLinePrinter.cs" />
+    <Compile Include="Printers\NewLineStringPrinter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategies\BuzzStrategy.cs" />
+    <Compile Include="Strategies\FizzStrategy.cs" />
+    <Compile Include="Strategies\NoFizzNoBuzzStrategy.cs" />
+    <Compile Include="StringReturners\BuzzStringReturner.cs" />
+    <Compile Include="StringReturners\FizzStringReturner.cs" />
+    <Compile Include="StringReturners\IntegerIntegerStringReturner.cs" />
+    <Compile Include="StringReturners\NewLineStringReturner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Factories\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Factories.csproj">
+      <Project>{496F9837-AA4E-4D34-B948-AFF1E7CD4208}</Project>
+      <Name>SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Factories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Printers\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Printers.csproj">
+      <Project>{A5AC49AF-34B9-4C89-8C1A-4BBED55BA519}</Project>
+      <Name>SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Printers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Strategies\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Strategies.csproj">
+      <Project>{46BCCECB-1DF0-46CD-8181-4E4C77DA97DD}</Project>
+      <Name>SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Strategies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.StringReturners\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.StringReturners.csproj">
+      <Project>{86DDEFD5-0BC6-45E7-85F5-54AC1195DDB5}</Project>
+      <Name>SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.StringReturners</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{496F9837-AA4E-4D34-B948-AFF1E7CD4208}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Factories</RootNamespace>
+    <AssemblyName>SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Factories</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IIntegerPrinterFactory.cs" />
+    <Compile Include="IIntegerStringReturnerFactory.cs" />
+    <Compile Include="IIsEvenlyDivisibleStrategyFactory.cs" />
+    <Compile Include="IStringPrinterFactory.cs" />
+    <Compile Include="IStringStringReturnerFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Printers\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Printers.csproj">
+      <Project>{A5AC49AF-34B9-4C89-8C1A-4BBED55BA519}</Project>
+      <Name>SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Printers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Strategies\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Strategies.csproj">
+      <Project>{46BCCECB-1DF0-46CD-8181-4E4C77DA97DD}</Project>
+      <Name>SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.Strategies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.StringReturners\SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.StringReturners.csproj">
+      <Project>{86DDEFD5-0BC6-45E7-85F5-54AC1195DDB5}</Project>
+      <Name>SeriousCompany.Business.CSharp.FizzBuzz.Interfaces.StringReturners</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
